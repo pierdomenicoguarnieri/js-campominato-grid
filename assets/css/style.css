@@ -43,7 +43,6 @@ body{
   width: 800px;
   aspect-ratio: 1/1;
   background-color: darkslategray;
-  display: none;
   opacity: 0;
 }
 
