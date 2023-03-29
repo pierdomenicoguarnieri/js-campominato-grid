@@ -41,6 +41,16 @@ btnPlay.addEventListener("click", function(){
   }
 })
 
+/**
+ * This function does 3 actions:
+ * - It creates an element then adds the class "box" to it and, depending on the "lvl" value it adds "lvlmedium" if lvl = 2 or "lvlsimple" if lvl = 3, otherwise it adds only "box".
+ * - It saves "randomNumber" in a custom tag that is saved inside the element.
+ * - It toggles the class "clicked" and shows in a "console.log" the custom tag that was generated before; this is done by an "EventListener" on the element that is activated when the single element is clicked.
+ * 
+ * @param {number} randomNumber 
+ * @param {number} lvl 
+ * @returns element
+ */
 function createElement(randomNumber, lvl){
   const box = document.createElement("div");
   box.className = "box";
@@ -61,11 +71,24 @@ function createElement(randomNumber, lvl){
   return box;
 }
 
+/**
+ * This funcition generates a random number between 1 and "limit".
+ * 
+ * @param {number} limit 
+ * @returns random number between 1 and "limit"
+ */
 function getRandomNumber(limit){
   const number = Math.floor(Math.random() * limit) + 1;
   return number;
 }
 
+/**
+ * This function verifies by comparing the generated number to an array that the number generated is unique, if it is it returns it, otherwise it keeps generating numbers.
+ * 
+ * @param {array} array 
+ * @param {number} limit 
+ * @returns unique random number
+ */
 function verifyRandomNumber(array, limit){
   let number;
   do{
