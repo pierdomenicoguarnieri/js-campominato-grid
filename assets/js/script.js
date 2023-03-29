@@ -8,16 +8,27 @@ const blackList = [];
 
 let randomNumber;
 
-do{
-  randomNumber = verifyRandomNumber(blackList);
-  blackList.push(randomNumber)
-}while(blackList.length !== 100)
-
 btnPlay.addEventListener("click", function(){
   container.classList.add("fade-in");
 
-  for(let i = 0; i < 100; i++){
-    const box = createElement(blackList[i]);
+  let boxNumber;
+
+  switch (parseInt(select.value)){
+    case 1:
+      boxNumber = 100;
+    break;
+    
+    case 2:
+      boxNumber = 81;
+    break;
+
+    case 3:
+      boxNumber = 49;
+    break;
+
+    default:
+      boxNumber = 100;
+  }
     container.appendChild(box);
   }
 })
