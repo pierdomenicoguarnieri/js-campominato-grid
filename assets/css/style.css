@@ -23,7 +23,7 @@ body{
   font-size: 1.6rem;
 }
 
-#btn{
+.input{
   margin-top: 20px;
   border: 2px solid rgb(115, 185, 9);
   border-radius: 10px;
@@ -33,7 +33,7 @@ body{
   cursor: pointer;
 }
 
-#btn:hover{
+.input:hover{
   transition: all .3s;
   background-color: rgb(115, 185, 9);
   color: white;
@@ -47,9 +47,17 @@ body{
 }
 
 .container .box{
-  width: calc(100%/10);
-  aspect-ratio: 1/1;
+  width: calc(100% / 10);
+  aspect-ratio: 1 / 1;
   border: 1px solid white;
+}
+
+.box.lvlmedium{
+  width: calc(100% / 9);
+}
+
+.box.lvlsimple{
+  width: calc(100% / 7);
 }
 
 .fade-in{
