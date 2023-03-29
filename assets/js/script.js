@@ -36,13 +36,23 @@ btnPlay.addEventListener("click", function(){
   }while(blackList.length !== boxNumber)
   
   for(let i = 0; i < boxNumber; i++){
+    const box = createElement(blackList[i], parseInt(select.value));
     container.appendChild(box);
   }
 })
 
-function createElement(randomNumber){
+function createElement(randomNumber, lvl){
   const box = document.createElement("div");
   box.className = "box";
+  switch (lvl){
+    case 2:
+      box.classList.add("lvlmedium");
+    break;
+
+    case 3:
+      box.classList.add("lvlsimple");
+    break;
+  }
   box.tagRandomNumber = randomNumber;
   box.addEventListener("click", function(){
     console.log(box.tagRandomNumber);
