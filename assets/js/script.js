@@ -29,6 +29,13 @@ btnPlay.addEventListener("click", function(){
     default:
       boxNumber = 100;
   }
+  
+  do{
+    randomNumber = verifyRandomNumber(blackList, boxNumber);
+    blackList.push(randomNumber)
+  }while(blackList.length !== boxNumber)
+  
+  for(let i = 0; i < boxNumber; i++){
     container.appendChild(box);
   }
 })
@@ -44,15 +51,15 @@ function createElement(randomNumber){
   return box;
 }
 
-function getRandomNumber(){
-  const number = Math.floor(Math.random() * 100) + 1;
+function getRandomNumber(limit){
+  const number = Math.floor(Math.random() * limit) + 1;
   return number;
 }
 
-function verifyRandomNumber(array){
+function verifyRandomNumber(array, limit){
   let number;
   do{
-    number = getRandomNumber();
+    number = getRandomNumber(limit);
   }while(array.includes(number))
   return number;
 }
