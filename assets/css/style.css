@@ -50,6 +50,7 @@ body{
   width: calc(100% / 10);
   aspect-ratio: 1 / 1;
   border: 1px solid white;
+  cursor: pointer;
 }
 
 .box.lvlmedium{
