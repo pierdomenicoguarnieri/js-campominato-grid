@@ -1,5 +1,7 @@
 const btnPlay = document.getElementById("btn");
 
+const select = document.getElementById("select");
+
 const container = document.querySelector(".container");
 
 const blackList = [];
