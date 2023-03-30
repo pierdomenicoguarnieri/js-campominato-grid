@@ -8,7 +8,10 @@ const blackList = [];
 
 let randomNumber;
 
-btnPlay.addEventListener("click", function(){
+btnPlay.addEventListener("click", btnPlay)
+
+function btnPlay(){
+  reset(blackList);
   container.classList.add("fade-in");
 
   let boxNumber;
@@ -39,7 +42,7 @@ btnPlay.addEventListener("click", function(){
     const box = createElement(blackList[i], parseInt(select.value));
     container.appendChild(box);
   }
-})
+}
 
 /**
  * This function does 3 actions:
@@ -67,9 +70,9 @@ function createElement(randomNumber, lvl){
       box.classList.add("lvlhard");
     break;
   }
-  box.tagRandomNumber = randomNumber;
+  box._tagRandomNumber = randomNumber;
   box.addEventListener("click", function(){
-    console.log(box.tagRandomNumber);
+    console.log(box._tagRandomNumber);
     box.classList.toggle("clicked");
   })
   return box;
@@ -99,4 +102,9 @@ function verifyRandomNumber(array, limit){
     number = getRandomNumber(limit);
   }while(array.includes(number))
   return number;
+}
+
+function reset(array){
+  array.splice(0,array.length)
+  container.innerHTML = "";
 }
