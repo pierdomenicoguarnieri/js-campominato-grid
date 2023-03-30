@@ -55,12 +55,16 @@ function createElement(randomNumber, lvl){
   const box = document.createElement("div");
   box.className = "box";
   switch (lvl){
+    case 1:
+      box.classList.add("lvlsimple");
+    break;
+
     case 2:
       box.classList.add("lvlmedium");
     break;
 
     case 3:
-      box.classList.add("lvlsimple");
+      box.classList.add("lvlhard");
     break;
   }
   box.tagRandomNumber = randomNumber;

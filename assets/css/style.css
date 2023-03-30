@@ -47,17 +47,20 @@ body{
 }
 
 .container .box{
-  width: calc(100% / 10);
   aspect-ratio: 1 / 1;
   border: 1px solid white;
   cursor: pointer;
+}
+
+.box.lvlsimple{
+  width: calc(100% / 10);
 }
 
 .box.lvlmedium{
   width: calc(100% / 9);
 }
 
-.box.lvlsimple{
+.box.lvlhard{
   width: calc(100% / 7);
 }
 
